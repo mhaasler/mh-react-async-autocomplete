@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>react.js asyncron autocomplete example</title>
+  </head>
+
+  <body>
+
+  <!-- mountpoint -->
+  <aside>
+    <form role="search" method="get" id="searchform" class="searchform" action="/">
+      <div>
+        <label class="screen-reader-text" for="s">search for:</label>
+        <input type="text" value="" name="s" id="s">
+        <input type="submit" id="searchsubmit" value="Suche">
+      </div>
+    </form>
+  </aside>
+
+  <!-- settings -->
+  <script type="text/javascript">
+    var mh_raa_settings = {
+        apiUrl: "",
+        mountpoint: 'searchform',
+        placeholder: 'search ...',
+        multiTagSearch: true,
+        autoFocus: true
+    }
+  </script>
+
+  <!-- js app -->
+  <script type="text/javascript" src="dist/app.js"></script>
+
+  <!-- style -->
+  <style type="text/css">
+    body{font-family: Arial}
+    ul,li{	list-style: none;}
+    .mh-react-async-autocomplete {width: 300px; position: relative}
+    .mh-react-async-autocomplete .search--input {width: 100%;	line-height: 1.5rem;padding: 0.5rem 0.4rem 0.3rem 0.4rem;	font-size: 1.5rem;}
+    .mh-react-async-autocomplete #input--status-clean-btn { position: absolute;right: 0;top: 1rem;opacity: 0.5;}
+    .mh-react-async-autocomplete #input--status-clean-btn:hover { opacity: 1;cursor: pointer;}
+    .mh-react-async-autocomplete #mhis-search--suggest-list {position: absolute;	background-color: #faf8f5;width: 100%;z-index: 10;}
+    .mh-react-async-autocomplete #mhis-search--suggest-list li {padding: 0.5rem 0.4rem 0.3rem 0.4rem;width: 100%;background-color: #faf8f5;}
+    .mh-react-async-autocomplete .speech-btn#input--speech-btn{	width: 1.5em;  height: 1.5em;  position: absolute;  top: 0.5em;  right: -15px;}
+    .mh-react-async-autocomplete .speech-btn#input--speech-btn:hover{cursor: pointer}
+    .mh-react-async-autocomplete.micro-off .speech-btn#input--speech-btn svg{fill: gray;}
+    .mh-react-async-autocomplete.micro-on .speech-btn#input--speech-btn svg{fill: red;}
+    .mh-react-async-autocomplete #mhis-search--suggest-list li:hover,
+    .mh-react-async-autocomplete #mhis-search--suggest-list li.active {cursor: pointer;background-color: #dcdad7;}
+    .mh-react-async-autocomplete.loading #input--status-clean-btn{
+        top: 0.8rem;
+      -webkit-animation-name: spin;
+      -webkit-animation-duration: 600ms;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+      -moz-animation-name: spin;
+      -moz-animation-duration: 600ms;
+      -moz-animation-iteration-count: infinite;
+      -moz-animation-timing-function: linear;
+      -ms-animation-name: spin;
+      -ms-animation-duration: 600ms;
+      -ms-animation-iteration-count: infinite;
+      -ms-animation-timing-function: linear;
+
+      animation-name: spin;
+      animation-duration: 600ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    @-ms-keyframes spin {
+      from { -ms-transform: rotate(0deg); }
+      to { -ms-transform: rotate(360deg); }
+    }
+    @-moz-keyframes spin {
+      from { -moz-transform: rotate(0deg); }
+      to { -moz-transform: rotate(360deg); }
+    }
+    @-webkit-keyframes spin {
+      from { -webkit-transform: rotate(0deg); }
+      to { -webkit-transform: rotate(360deg); }
+    }
+    @keyframes spin {
+      from {
+        transform:rotate(0deg);
+      }
+      to {
+        transform:rotate(360deg);
+      }
+    }
+  </style>
+
+  </body>
+</html>
